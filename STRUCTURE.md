@@ -135,28 +135,19 @@ The `README.md` contains the top-level introductory documentation for your proje
 ### `setup.cfg`
 
 You will typically see packaging handled mainly through `setup.py`. However, including parsing and building logic within the `setup.py` script is **highly discouraged** as it causes many issues in `pip` and other dependency installers.
+Until `pyproject.toml` becomes the supported standard, [`setup.cfg` should be used for declaring the metadata of your package](https://docs.python.org/3/distutils/configfile.html) and all tooling that doesn’t already support `pyproject.toml`.
 
-Until `pyproject.toml` becomes the supported standard, [`setup.cfg` should be used for declaring the metadata of your package](https://docs.python.org/3/distutils/configfile.html) and all tooling that doesn’t already support `pyproject.toml`. This file contains [`setuptools`](https://setuptools.readthedocs.io/en/latest/setuptools.html) metadata used during the Python packaging process under the `[metadata]` section.
-
-Another **really important** section within this file is the `[options]` section. This section contains details for making your defining the necessary dependencies for setuptools to properly package your project as both source and wheel distributions. As new dependencies required for the runtime of your project are added, the `install_requires` key should also be updated. For extra dependencies (installable via the common `project[extra]` syntax), the necessary dependencies should be defined within the `[options.extras_require]`. This project template includes configuration for both `test` and `docs` extras.
-
-You will also find configuration for many utilities within this file under their own specified section headings. Configuration for tools such as `pytest`, `flake8`, `isort`, `mypy`, and `coverage` are currently included in this project template.
-
-### `setup.py`
-
-Finally, the `setup.py` script is a short and simple script to read configuration from `setup.cfg` and populate the [`setuptools.setup()`](https://setuptools.readthedocs.io/en/latest/setuptools.html#new-and-changed-setup-keywords) call with the necessary data. This file is purposefully built to have as little logic as possible. Adding too much parsing and iterative building logic to this file is considered a bad practice by PyPi and dependency solvers used by package managers.
-
-Please *try* to avoid adding any new functionality to this file.
+You will find configuration for many utilities within this file under their own specified section headings.
+Configuration for tools that currently don't support `pyproject.toml` such as `flake8`, `isort`, and `mypy` are currently included in this project template.
 
 ## Project Tooling
 
 The following sections detail the specific tools taken advantage of by this project template.
 
-### [`pipenv`](https://github.com/pypa/pipenv)
+### [`poetry`](https://python-poetry.org/)
 
-Pipenv is a virtual environment / dependency management utility that is supported on all shells and utilizes a PyPi optimized dependency-resolver. Considered the defacto standard for proper depenency management by PyPi, this tool allows you to manage your project’s production and development dependencies with lock files and local virtual environments.
-
-Although there are popular alternatives to [Pipenv](https://github.com/pypa/pipenv) such as [Poetry](https://python-poetry.org/), many editors (VSCode, Atom, PyCharm, etc.) and services (Heorku, Azure Devops, etc.) are integrated heavily with Pipenv as opposed to Poetry (albeit simply because it was first). However, since many existing tools have plug-and-play integration with the `Pipfile` standard, Pipenv is (curently) a more solid choice for creating an easy developer experience.
+Poetry is a virtual environment / dependency management utility that is supported on all shells and utilizes a PyPi optimized dependency-resolver.
+This tool allows you to manage your project’s production and development dependencies with lock files and local virtual environments.
 
 *In the future, switching dependency managers, should be just as easy as switching from [`npm`](https://www.npmjs.com/) to [`yarn`](https://yarnpkg.com/).*
 

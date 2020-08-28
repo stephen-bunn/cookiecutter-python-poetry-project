@@ -1,4 +1,4 @@
-# Cookiecutter Template – Python Package 🐍📦
+# Cookiecutter Template – Python Poetry Package 🎶🐍📦
 
 This project contains a [Cookiecutter](https://cookiecutter.readthedocs.io/en/latest/) template that allows us to easily build out fully intialized Python packages that are ready for publishing right out of the box. We also add in a whole bunch of tooling to benefit the development experience and promote project sustainability.
 
