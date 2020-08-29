@@ -59,6 +59,7 @@ coverage = { version = "^5.2.1", extras = ["toml"] }
 flake8 = "^3.8.3"
 flake8-docstrings = "^1.5.0"
 hypothesis = "^5.29.3"
+invoke = "^1.4.1"
 isort = "^5.4.2"
 mypy = "^0.782"
 pre-commit = "^2.7.1"
@@ -162,7 +163,9 @@ flake8-ignore = [
 [tool.coverage.run]
 branch = true
 parallel = true
-disable_warnings = "no-data-collected"
+disable_warnings = [
+  "no-data-collected"
+]
 source = [
   "src/{{ cookiecutter.package_name }}/"
 ]
