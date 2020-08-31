@@ -17,11 +17,11 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install Dependencies
         run: |
-          python -m pip install --upgrade pip setuptools wheel
-          python -m pip install -e .[test] --upgrade
+          python -m pip install --upgrade poetry
+          poetry install -D
       - name: Run Tests
         run: |
-          pytest -p no:warnings
+          poetry run pytest -p no:warnings
       - name: Build Coverage Report
         run: |
           coverage xml -o cobertura.xml

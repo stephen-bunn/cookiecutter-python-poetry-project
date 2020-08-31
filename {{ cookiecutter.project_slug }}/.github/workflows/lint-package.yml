@@ -16,4 +16,4 @@ jobs:
           poetry install
       - name: Run Linters
         run: |
-          invoke lint
+          poetry run invoke lint

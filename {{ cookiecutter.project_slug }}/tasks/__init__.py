@@ -35,6 +35,11 @@ def profile(ctx, filename, calltree=False):
     if not filepath.is_file():
         report.error(ctx, "profile", f"no such script {filepath!s}")
     else:
+        report.debug(
+            ctx,
+            "profile",
+            "this task assumes that you have installed the 'profile' extra dependency"
+        )
         if calltree:
             report.info(ctx, "profile", f"profiling script {filepath!s} calltree")
             ctx.run(
