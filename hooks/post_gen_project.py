@@ -17,6 +17,7 @@ poetry_command = "poetry install"
 os.system(poetry_command)
 
 # initialize pre-commit hooks
+os.system("poetry run pre-commit autoupdate")
 os.system("poetry run pre-commit install")
 
 # prompt initial commit
