@@ -188,6 +188,7 @@ provided ``invoke`` development dependency.
       package.build          Build pacakge source files.
       package.check          Check built package is valid.
       package.clean          Clean previously built package artifacts.
+      package.coverage       Build coverage report for test run.
       package.format         Auto format package source files.
       package.requirements   Generate requirements.txt from Poetry's lock.
       package.stub           Generate typing stubs for the package.

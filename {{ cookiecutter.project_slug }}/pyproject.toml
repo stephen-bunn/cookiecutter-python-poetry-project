@@ -20,6 +20,7 @@ keywords = [
   "{{ cookiecutter.package_keywords.split(',') | map('trim') | join('",\n  "') }}"
 ]
 classifiers = [
+  "{{ cookiecutter.licenses[cookiecutter.package_license].classifier }}",
   "Development Status :: 3 - Alpha",
   "Intended Audience :: Developers",
   "Operating System :: POSIX",
@@ -175,3 +176,6 @@ source = [
 
 [tool.coverage.report]
 show_missing = true
+
+[tool.coverage.html]
+directory = reports
