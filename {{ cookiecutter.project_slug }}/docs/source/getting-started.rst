@@ -5,7 +5,7 @@ Getting Started
 ===============
 
 | **Welcome to {{ cookiecutter.title }}!**
-| This page should hopefully provide you with enough information to get you started defining, serializing, and validating config instances.
+| This page should hopefully provide you with enough information to get you started using {{ cookiecutter.title }}.
 
 Installation and Setup
 ======================
