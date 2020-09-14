@@ -6,8 +6,8 @@
 
 import pathlib
 
-import toml
 import invoke
+import toml
 
 from . import docs, linter, package
 from .utils import report
@@ -38,7 +38,7 @@ def profile(ctx, filename, calltree=False):
         report.debug(
             ctx,
             "profile",
-            "this task assumes that you have installed the 'profile' extra dependency"
+            "this task assumes that you have installed the 'profile' extra dependency",
         )
         if calltree:
             report.info(ctx, "profile", f"profiling script {filepath!s} calltree")

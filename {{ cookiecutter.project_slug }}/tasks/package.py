@@ -33,7 +33,7 @@ def coverage(ctx, view=False):
         report.debug(
             ctx,
             "package.coverage",
-            f"creating coverage report directory at {reports_dirpath!s}"
+            f"creating coverage report directory at {reports_dirpath!s}",
         )
         reports_dirpath.mkdir()
 

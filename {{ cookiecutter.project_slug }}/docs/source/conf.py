@@ -13,8 +13,8 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
-import sys
 import pathlib
+import sys
 
 import toml
 
@@ -142,7 +142,13 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, f"{title_filename}.tex", f"{title} Documentation", author, "manual",)
+    (
+        master_doc,
+        f"{title_filename}.tex",
+        f"{title} Documentation",
+        author,
+        "manual",
+    )
 ]
 
 
