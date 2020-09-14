@@ -178,4 +178,4 @@ source = [
 show_missing = true
 
 [tool.coverage.html]
-directory = reports
+directory = "htmlcov"

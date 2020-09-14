@@ -28,21 +28,17 @@ def test(ctx, verbose=False):
 def coverage(ctx, view=False):
     """Build coverage report for test run."""
 
-    reports_dirpath = Path(__file__).parent.parent.joinpath("reports")
-    if reports_dirpath.is_dir():
+    reports_dirpath = Path(__file__).parent.parent.joinpath("htmlcov")
+    if not reports_dirpath.is_dir():
         report.debug(
             ctx,
             "package.coverage",
-            f"clearing reports directory at {reports_dirpath!s}",
+            f"creating coverage report directory at {reports_dirpath!s}"
         )
-        shutil.rmtree(reports_dirpath.as_posix())
+        reports_dirpath.mkdir()
 
-    report.debug(
-        ctx, "package.coverage", f"creating reports directory at {reports_dirpath!s}"
-    )
-    reports_dirpath.mkdir()
     report.info(ctx, "package.coverage", "building coverage report")
-    ctx.run("coverage html -d reports/")
+    ctx.run(f"coverage html -d {reports_dirpath.as_posix()!s}")
 
     if view:
         index_filepath = reports_dirpath.joinpath("index.html")
