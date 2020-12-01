@@ -3,7 +3,6 @@
 # ISC License <https://opensource.org/licenses/isc>
 
 import os
-import shutil
 
 # initialize git repository
 os.system("git init")

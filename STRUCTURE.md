@@ -18,7 +18,7 @@ This GitHub configuration folder also includes [GitHub actions](https://github.c
 
 Along with this, we strongly encourage utilizing Sphinx-style docstrings in your source code so that Sphinx’s builtin plugin [`sphinx.ext.autodoc`](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html) can automatically include your docstrings as part of your package documentation. This project is automatically configured to run autodoc when building documentation with the source code discoverable within the `src/` folder.
 
-### `news/`
+### `changes/`
 
 News fragment files for use when generating a new version bump and release in order to populate `CHANGELOG.rst` with noteworthy changes. News fragments are simply files with specific extensions such as `.feature`, `.bugfix`, `.removal`, `.deprecated`, etc. The tool that automatically generates our changelogs is [Towncrier](https://towncrier.readthedocs.io/en/actual-freaking-docs/index.html) and is regarded as the simplest itreation for proper changelog management.
 
